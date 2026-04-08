@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        h1 {
+            color: lightgreen;
+        }
+    </style>
+    <script>
+        window.onload = inicio;
+        let memoria;
+
+        function inicio() {
+            let botaoG = document.getElementById('btn_guardar');
+            botaoG.addEventListener('click', guardar);
+            let botaoA = document.getElementById('btn_adicionar');
+            botaoA.addEventListener('click', adicionar);
+            let botaoR = document.getElementById('btn_retirar');
+            botaoR.addEventListener('click', retirar);
+            let botaoL = document.getElementById('btn_limpar');
+            botaoL.addEventListener('click', limpar);
+            let botaoM = document.getElementById('btn_mostrar');
+            botaoM.addEventListener('click', mostrar);
+        }
+
+        function guardar() {
+            let campo = document.getElementById('numero');
+            let digitado = campo.value;
+            let numero = parseInt(digitado);   
+            memoria = digitado;
+            console.log(memoria)
+            let saida = document.getElementById('saida');
+            saida.innerHTML = memoria;
+        }
+
+        function adicionar() {
+            let campo = document.getElementById('numero');
+            let digitado = campo.value;
+            let numero = parseInt(digitado);   
+            memoria = memoria + numero;
+            let saida = document.getElementById('saida');
+            saida.innerHTML = memoria;
+        }
+
+        function retirar() {
+            let campo = document.getElementById('numero');
+            let digitado = campo.value;
+            let numero = parseInt(digitado);   
+            memoria -= digitado;
+            let saida = document.getElementById('saida');
+            saida.innerHTML = memoria;
+        }
+        
+        function limpar() {
+            memoria = null;
+        }
+
+        function mostrar() {
+            let campo = document.getElementById('numero');
+            let digitado = campo.value;
+            let numero = parseInt(digitado);   
+            memoria;
+            let saida = document.getElementById('saida');
+            saida.innerHTML = memoria;
+        }
+        
+        
+    </script>
+</head>
+
+<body>
+    <label for="numero">Número:</label>
+    <input type="text" id="numero">
+    <p id="saida"></p>
+    <br><button id="btn_guardar">Guardar</button></br>
+    <br><button id="btn_adicionar">Adicionar</button></br>
+    <br><button id="btn_retirar">Retirar</button></br>
+    <br><button id="btn_limpar">Limpar</button></br>
+    <br><button id="btn_mostrar">Mostrar</button></br>
+
+</body>
+
+</html>

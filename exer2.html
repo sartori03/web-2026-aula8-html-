@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        h1 {
+            color: lightgreen;
+        }
+    </style>
+    <script>
+        window.onload = inicio;
+
+        function inicio() {
+            let botao = document.getElementById('btn_mostrar');
+            botao.addEventListener('click', mostrando);
+        }
+
+        function mostrando() {
+            let campo = document.getElementById('numero');
+            let digitado = campo.value;
+            console.log(digitado);
+            console.log(typeof digitado);
+
+            let numero = parseInt(digitado);
+            console.log(numero);
+            console.log(typeof numero);
+                                
+            let mensagem = `Digitado: ${digitado} equivalente: ${numero*2}`;
+
+            let saida = document.getElementById('saida');
+            saida.innerHTML = mensagem;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Aprendendo JS</h1>
+    <input type="number" id="numero">
+    <p id="saida"></p>
+    <button id="btn_mostrar">Mostrar</button>
+</body>
+
+</html>
